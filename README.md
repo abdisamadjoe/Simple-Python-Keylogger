@@ -18,25 +18,25 @@ This project demonstrates a simple Python keylogger that captures and logs keyst
 
 <p align="center">
 Code Overview: <br/>
-<img src="https://github.com/user-attachments/assets/aa91d9b6-9557-4595-8157-7c14b7762f91" height="80%" width="80%" alt="Password Complexity Checker Code Overview"/>
+
+<img src="https://github.com/user-attachments/assets/584654c3-e61a-45f4-9f5c-3ae620266c10" height="80%" width="80%" alt="Keylogger Code Overview"/>
 <br />
 <br />
-Testing for Strong, Moderate, and Weak Passwords: <br/>
-<img src="https://github.com/user-attachments/assets/42648c04-d60e-4581-81aa-3e92f036fb2a" height="80%" width="80%" alt="Testing Strong Password"/>
+Code in Action: <br/>
+<img src="https://github.com/user-attachments/assets/5f4c6eab-df06-4af9-bdaa-ceb7b743571b" height="80%" width="80%" alt="Keystroke logging"/>
 <br />
-<img src="https://github.com/user-attachments/assets/78ff35f4-64a9-4264-a533-12c149069ee4" height="80%" width="80%" alt="Testing Moderate Password"/>
-<br />
-<img src="https://github.com/user-attachments/assets/fcd343f1-129f-43c0-a6d1-c5963206bce6" height="80%" width="80%" alt="Testing Weak Password"/>
 </p>
 
-## How It Works:
-- **Length**: At least 8 characters.
-- **Uppercase**: Includes one uppercase letter.
-- **Lowercase**: Includes one lowercase letter.
-- **Number**: Contains at least one digit.
-- **Special Character**: Includes one special character (e.g., `!@#$%^&*()`).
+## How It Works
 
-## Usage
-1. **Run the Script**: Input your password when prompted.
-2. **View Feedback**: The script will return whether your password is weak, moderate, or strong based on the criteria.
+1. **Listening to Keystrokes**: The script uses the `pynput` library to monitor keyboard events. It captures each key press and stores it in a list.
+2. **Processing Keystrokes**: When a key is pressed, the `on_press` function is called. It checks if the key is a character or a special key and adds it to the `keys` list.
+3. **Writing to File**: The `write_file` function appends the collected keystrokes to a file named `log.txt` and clears the list to prepare for the next batch of keystrokes.
+4. **Running in Background**: The `keyboard.Listener` starts the keylogger and runs it in the background, continuously listening for and processing keystrokes until stopped.
+
+
+## Responsible Usage
+
+This keylogger is intended solely for educational purposes. It should only be used in environments where you have explicit permission to monitor keystrokes. Unauthorized use of keyloggers can breach privacy laws and lead to legal consequences.
+
 
